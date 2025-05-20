@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { MoviesList } from './components/MoviesList';
 import moviesFromServer from './api/movies.json';
 
-function prepareMovies(movies, { query }) {
+function preparMovies(movies, { query }) {
   let preparedMovies = movies;
   const normalazedQuery = query.trim().toLowerCase();
 
@@ -21,7 +21,7 @@ function prepareMovies(movies, { query }) {
 export const App = () => {
   const [query, setQuery] = useState('');
 
-  const visibleMovies = prepareMovies(moviesFromServer, { query });
+  const visibleMovies = preparMovies(moviesFromServer, { query });
 
   return (
     <div className="page">
